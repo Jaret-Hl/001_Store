@@ -10,12 +10,12 @@ class Tag extends Model
     use HasFactory;
 
     // Relacion muchos a muchos
-    public function tags(){
+    public function ventas(){
         return $this->belongsToMany(Venta::class);
     }
 
     //relacion uno a uno polimorfica
     public function image(){
-        return $this->morphOne(Images::class,'imageable');
+        return $this->morphOne(Image::class,'imageable');
     }
 }
